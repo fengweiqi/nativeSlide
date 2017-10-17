@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+	<style>
+	    body{
+	    	background: blue;
+	    }
+	    ul{
+	    	padding: 0;
+	    	margin: 0;
+	    }
+	    ul li{
+	    	padding: 0;
+	    	margin: 0;
+	    	list-style: none;
+	    }
+		.nativeSlide{
+			width: 900px;
+			height:300px;
+			position: relative;
+			top: 100px;
+			left: 100px;
+			background: green;
+		}
+
+		.nativeSlide .prev,.nativeSlide .next{
+			position: absolute;
+			top: 50%;
+			width: 48px;
+			height: 76px;
+			margin-top: -38px;
+			cursor: pointer;
+			z-index: 1;
+			
+			
+		}
+		.nativeSlide .prev{
+
+			background: url('./image/icon/arrow_left.png') no-repeat;
+			left: -55px;
+
+		}
+		.nativeSlide .next{
+
+			background: url('./image/icon/arrow_right.png') no-repeat;
+			right: -55px;
+
+		}
+		
+
+		.nativeSlide .prev:focus{
+
+			background-image: url('./image/icon/arrow_left_active.png');
+
+		}
+		.nativeSlide .next:focus{
+
+			background-image: url('./image/icon/arrow_right_active.png');
+
+		}
+
+		.nativeSlide .nativeSlide-Box{
+
+			width:100%;
+			height: 100%;
+			position: relative;
+			overflow: hidden;
+
+
+		}
+		.nativeSlide .nativeSlide-Box .slideItem{
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 100%;
+			height: 100%;
+			font-size: 36px;
+		}
+
+		.nativeSlide .nativeSlide-Box .slideItem:nth-child(1){
+			background: yellow;
+		}
+		.nativeSlide .nativeSlide-Box .slideItem:nth-child(2){
+			background: red;
+		}
+		.nativeSlide .nativeSlide-Box .slideItem:nth-child(3){
+			background: gray;
+		}
+		.nativeSlide .nativeSlide-Box .slideItem:nth-child(4){
+			background: #aecaef;
+		}
+
+
+
+
+	</style>
+</head>
+<body>
+
+	<div class="nativeSlide">
+		<a  href="javascript:;" class="prev"></a>
+		<ul class="nativeSlide-Box">
+			<li class="slideItem">1</li>
+			<li  class="slideItem active">2</li>
+			<li  class="slideItem ">3</li>
+			<li  class="slideItem ">4</li>
+		
+		</ul>
+		<a  href="javascript:;" class="next"></a>
+	</div>
+	<script src="./js/pollyfill.js"></script>
+	<script src="./js/animate.js"></script>
+	<script src="./js/nativeSlide.js"></script>
+	<script>
+	
+
+		var slide=new NativeSlide({
+			slideEl:document.body.getElementsByClassName('nativeSlide')[0],
+			speed:700,
+			loop:false
+		});
+	</script>
+</body>
+</html>
